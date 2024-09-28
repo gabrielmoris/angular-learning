@@ -1,0 +1,22 @@
+version: "3"
+services:
+  angular-learning:
+    build: .
+    ports:
+      - "4200:4200"
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: >
+      /bin/bash -c "
+      if [ ! -d '${PROJECT_NAME:-client}' ]; then 
+        ng new ${PROJECT_NAME:-client} --style=scss --ssr --skip-git --skip-install &&
+        cd ${PROJECT_NAME:-client} && 
+        npm install &&
+        cd .. &&
+        chown -R 1000:1000 ${PROJECT_NAME:-client} &&
+        chmod -R 777 ${PROJECT_NAME:-client};
+      fi &&
+      cd ${PROJECT_NAME:-client} &&
+      ng serve --host 0.0.0.0
+      "

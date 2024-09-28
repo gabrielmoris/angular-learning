@@ -1,0 +1,27 @@
+{
+  "name": "angular-learning",
+  "version": "0.0.0",
+  "description": "Angular project to understand and lear its capabilities",
+  "main": "index.js",
+  "scripts": {
+    "start": "docker-compose up",
+    "docker-build": "docker-compose up --build",
+    "new-component": "docker-compose exec angular-learning sh -c 'cd /app/client && ng generate component'",
+    "new-project": "PROJECT_NAME=app docker-compose up --build",
+    "rights": "sudo chown -R $USER:$USER ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabrielmoris/angular-learning.git"
+  },
+  "keywords": [
+    "angular",
+    "learn"
+  ],
+  "author": "gabrielcmoris",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gabrielmoris/angular-learning/issues"
+  },
+  "homepage": "https://github.com/gabrielmoris/angular-learning#readme"
+}
