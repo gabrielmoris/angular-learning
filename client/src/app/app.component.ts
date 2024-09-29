@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { NgClass, NgStyle } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, FormsModule, NgClass, NgStyle],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
@@ -24,4 +26,20 @@ export class AppComponent {
 
   // Class binding
   textColor = 'yes!';
+
+  // function binding
+  counter = 0;
+  incrementCounter() {
+    this.counter++;
+  }
+
+  // 2 Way Data binding
+  inputText = 'Initial Value';
+
+  // ngClass
+  message = 'This is an error Message';
+  classes = 'danger text-size';
+
+  //ngStyle
+  selectedColor = 'green';
 }

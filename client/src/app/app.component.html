@@ -1,20 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <p>Hello, {{ title }}</p>
+<main>
+  <p>Hello, {{ title }}</p>
+  <div>
     <button [disabled]="isDisabled" type="button">{{ myBtn }}</button>
     <img [src]="angularImage" width="100" height="100" alt="angular-img" />
+  </div>
 
-    <div [style.backgroundColor]="bgColor">
-      <h2 [style.color]="titleColor">Title</h2>
-      <p [style]="description">Description</p>
-    </div>
+  <div [style.backgroundColor]="bgColor">
+    <h2 [style.color]="titleColor">Title</h2>
+    <p [style]="description">Description</p>
+  </div>
 
-    <h2 [class.redcolor]="textColor === 'yes!'">Title</h2>
-  </body>
-</html>
+  <h2 [class.redcolor]="textColor === 'yes!'">Title</h2>
+  <div>
+    <p>Counter: {{ counter }}</p>
+    <button (click)="incrementCounter()">Increment Counter</button>
+  </div>
+  <div>
+    <p>{{ inputText || "Write something" }}</p>
+    <input [(ngModel)]="inputText" />
+  </div>
+
+  <div [ngClass]="classes">
+    {{ message }}
+  </div>
+
+  <div class="color-box" [ngStyle]="{ 'background-color': selectedColor }">Box</div>
+</main>
